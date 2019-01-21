@@ -1,0 +1,46 @@
+﻿@model GerenciadorDePedidos.Models.Solicitante
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Remover Solicitante</h2>
+
+<h3>Tem certeza de que deseja remover este solicitante?</h3>
+<p>Todos os pedidos deste solicitante serão removidos.</p>
+<div>
+    <h4>Solicitante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Guichê
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdSolicitante)
+        </dd>
+        <dt>
+            Nome do Solicitante
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeSolicitante)
+        </dd>
+        <dt>
+            Número da Mesa
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MesaIdMesa)
+        </dd>
+        <dt>
+            Estado
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstadoAtendimento)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdSolicitante" />
+        <input type="submit" value="Remover" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info">Voltar à lista</a>
+    </form>
+</div>

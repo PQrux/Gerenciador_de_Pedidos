@@ -1,0 +1,37 @@
+﻿@model GerenciadorDePedidos.Models.Solicitante
+
+@{
+    ViewData["Title"] = "Editar Solicitante";
+}
+
+<h2>Editar Solicitante</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdSolicitante" />
+            <div class="form-group">
+                <label asp-for="NomeSolicitante" class="control-label">Nome do Solicitante</label>
+                <input asp-for="NomeSolicitante" class="form-control" />
+                <span asp-validation-for="NomeSolicitante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesaIdMesa" class="control-label">Número da Mesa</label>
+                <input asp-for="MesaIdMesa" class="form-control" />
+                <span asp-validation-for="MesaIdMesa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-info">Voltar à lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

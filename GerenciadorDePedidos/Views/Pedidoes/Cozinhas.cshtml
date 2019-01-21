@@ -1,0 +1,76 @@
+﻿@model IEnumerable<GerenciadorDePedidos.Models.Pedido>
+
+@{
+    ViewData["Title"] = "Cozinhas";
+    int i = 0;
+}
+
+<h2>Cozinha</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPedido)
+            </th>
+            <th>
+                Solicitante
+            </th>
+            <th>
+                Mesa
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                Estado do Pedido
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataPedido)
+            </th>
+            <th>
+                Nome do Produto
+            </th>
+            <th>
+                Estado de Atendimento
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+      {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.IdPedido)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.SolicitanteIdSolicitanteNavigation.NomeSolicitante)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.SolicitanteIdSolicitanteNavigation.MesaIdMesa)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoIdProdutoNavigation.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SolicitanteIdSolicitanteNavigation.EstadoAtendimento)
+            </td>
+            <td>
+                <a asp-action="DetalheCopa" asp-route-id="@item.IdPedido">Detalhes</a> 
+                <!--<a asp-action="Delete" asp-route-id="">Delete</a>-->
+            </td>
+        </tr>
+            i++;
+        }
+    </tbody>
+</table>

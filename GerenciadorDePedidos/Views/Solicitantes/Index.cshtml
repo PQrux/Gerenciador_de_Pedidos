@@ -1,0 +1,56 @@
+﻿@model IEnumerable<GerenciadorDePedidos.Models.Solicitante>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Garçom</h1>
+<h2>Gerenciamento de Solicitantes</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Guichê
+        </th>
+        <th>
+            Nome do Solicitante
+        </th>
+        <th>
+            Mesa
+        </th>
+        <th>
+            Estado
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSolicitante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeSolicitante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesaIdMesaNavigation.IdMesa)
+                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoAtendimento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdSolicitante">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdSolicitante">Pedidos</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdSolicitante">Remover</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

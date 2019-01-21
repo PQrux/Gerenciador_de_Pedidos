@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <div class="jumbotron">
+        <h1 class="display-3">Selecione o módulo:</h1>
+        <button type="button" class="btn btn-secondary" style="margin: 0px 50px 0px 0px;" onclick="window.location.href='/Solicitantes'">
+            <div class="card bg-light mb-3" style="max-width: 20rem;">
+                <h3 class="card-header">Garçom</h3>
+                <img style="height: 200px; width: 200px; display: block;" src="~/images/waiter.png" alt="Card image">
+            </div>
+        </button>
+        <button type="button" class="btn btn-secondary" style="margin: 0px 50px 0px 0px;" onclick="window.location.href='/Pedidoes/Cozinhas'">
+            <div class="card bg-light mb-3" style="max-width: 20rem;">
+                <h3 class="card-header">Cozinha</h3>
+                <img style="height: 200px; width: 200px; display: block;" src="~/images/chef.png" alt="Card image">
+            </div>
+        </button>
+        <button type="button" class="btn btn-secondary" style="margin: 0px 50px 0px 0px;" onclick="window.location.href='/Pedidoes/Copas'">
+            <div class="card bg-light mb-3" style="max-width: 20rem;">
+                <h3 class="card-header">Copa</h3>
+                <img style="height: 200px; width: 200px; display: block;" src="~/images/bartender.png" alt="Card image">
+            </div>
+        </button>
+    </div>
+</div>

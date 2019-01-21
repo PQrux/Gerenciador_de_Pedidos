@@ -1,0 +1,47 @@
+﻿@model GerenciadorDePedidos.Models.Pedido
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhe Copa</h2>
+
+<div>
+    <h4>Pedido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoPedido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstadoPedido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPedido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdutoIdProdutoNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProdutoIdProdutoNavigation.NomeProduto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SolicitanteIdSolicitanteNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SolicitanteIdSolicitanteNavigation.EstadoAtendimento)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Copas">Voltar à lista</a>
+</div>
